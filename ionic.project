@@ -1,0 +1,13 @@
+{
+  "name": "bodyWeightFitness",
+  "app_id": "",
+  "defaultBrowser": "google-chrome-stable",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

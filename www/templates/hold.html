@@ -1,0 +1,10 @@
+<h1>{{exercise.name}}</h1>
+
+<p class="lead">{{exercise.description}}</p>
+
+<div class="youtube-container">
+    <flip-clock autostart="false" countdown="true" time="{{exercise.maxHold}}"></flip-clock>
+    <button ng-click="start()">START</button>
+    <button ng-click="stop()">STOP</button>
+    <div class="youtube-player" data-id="{{exercise.youtube}}"></div>
+</div>

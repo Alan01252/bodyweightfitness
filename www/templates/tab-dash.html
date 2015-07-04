@@ -1,0 +1,61 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <div id="exercises">
+            <ion-slide-box on-slide-changed="findExercise($index)">
+                <ion-slide ng-repeat="exercise in routine">
+                    <div ng-switch on="exercise.type">
+                        <div ng-switch-when="category">
+                            <div ng-include src="'templates/category.html'"></div>
+                        </div>
+                        <div ng-switch-when="reps">
+                            <div ng-include src="'templates/reps.html'"></div>
+                        </div>
+
+                        <div ng-switch-when="hold">
+                            <div ng-include src="'templates/hold.html'"></div>
+                        </div>
+
+                        <div ng-switch-when="rest">
+                            <h1>{{ exercise.name }}</h1>
+                            <flip-clock autostart="true" countdown="true" time="{{exercise.seconds}}"></flip-clock>
+                            <button ng-click="start()">start</button>
+                        </div>
+
+                        <div ng-switch-when="repeat">
+                            <div>
+                                <h1>{{ repeatExercise.name }}</h1>
+
+
+                                <div ng-show="repeatExercise.youtube">
+                                    <div class="youtube-container">
+                                        <div class="youtube-player" data-id="{{repeatExercise.youtube}}"></div>
+                                    </div>
+                                </div>
+
+                                <div ng-if="repeatExercise.maxHold">
+                                    <flip-clock autostart="false" countdown="true"
+                                                time="{{repeatExercise.maxHold}}"></flip-clock>
+                                    <button ng-click="start()">start</button>
+                                    <button ng-click="stop()">stop</button>
+                                </div>
+
+
+                                <div ng-if="repeatExercise.seconds">
+                                    <flip-clock autostart="false" countdown="true"
+                                                time="{{repeatExercise.seconds}}"></flip-clock>
+                                    <button ng-click="start()">start</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="done">
+                            <h1>DONE</h1>
+                        </div>
+
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+</ion-view>
