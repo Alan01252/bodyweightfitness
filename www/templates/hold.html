@@ -1,10 +1,32 @@
-<h1>{{exercise.name}}</h1>
+<div class="card">
+    <div class="item item-divider">
+        <h1>{{exercise.name}}</h1>
+    </div>
+    <div class="item item-text-wrap">
+        <h2>{{exercise.description}}</h2>
 
-<p class="lead">{{exercise.description}}</p>
+        <div class="row">
+            <div class="col">
 
-<div class="youtube-container">
-    <flip-clock autostart="false" countdown="true" time="{{exercise.maxHold}}"></flip-clock>
-    <button ng-click="start()">START</button>
-    <button ng-click="stop()">STOP</button>
-    <div class="youtube-player" data-id="{{exercise.youtube}}"></div>
+                <div class="row">
+                    <div class="col clock-holder">
+                        <flip-clock class="button-block" autostart="false" countdown="true" defaultclockface="MinuteCounter"
+                                    clockFace="MinuteCounter"
+                                    time="{{exercise.maxHold}}"></flip-clock>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button ng-click="start()" class="button button-block button-positive">Start</button>
+                        <button ng-click="stop()" class="button button-block button-assertive">Stop</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="youtube-container">
+                    <div class="youtube-player" data-id="{{exercise.youtube}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

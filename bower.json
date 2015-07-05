@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.0.1"
   },
   "dependencies": {
-    "flipclock": "~0.7.7"
+    "flipclock": "~0.7.7",
+    "jquery": "~2.1.4"
   }
 }

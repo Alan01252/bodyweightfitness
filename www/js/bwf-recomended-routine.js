@@ -121,19 +121,22 @@ bwf.routine = {
                     "level": 1,
                     "name": "Wall Plank",
                     "youtube": "6jm4R3K4sJA",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 60
                 },
                 {
                     "level": 2,
                     "name": "Stomach-to-Wall Handstand",
                     "youtube": "dRycbwdcz7Y",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 60
                 },
                 {
                     "level": 3,
                     "name": "Freestanding Handstand",
                     "youtube": "Y3FSeSecjKA",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 60
                 }
             ],
             "enabled": true,
@@ -148,19 +151,22 @@ bwf.routine = {
                     "level": 1,
                     "name": "Parallel Bar Support",
                     "youtube": "dRycbwdcz7Y",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 180
                 },
                 {
                     "level": 2,
                     "name": "Ring Support",
                     "youtube": "V3IkFK5lvRw",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 180
                 },
                 {
                     "level": 3,
                     "name": "Rings Turned Out Support Hold",
                     "youtube": "8gmyhBScTLk",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 180
                 }
             ],
             "enabled": true,
@@ -307,25 +313,29 @@ bwf.routine = {
                     "level": 1,
                     "name": "Foot-supported L-sit",
                     "youtube": "IUZJoSP66HI",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 30
                 },
                 {
                     "level": 2,
                     "name": "One-Leg Foot Supported L-sit",
                     "youtube": "IUZJoSP66HI?t=144",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 30
                 },
                 {
                     "level": 3,
                     "name": "Tuck L-sit",
                     "youtube": "487aR3A7HvM?t=170",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 30
                 },
                 {
                     "level": 4,
                     "name": "L-sit",
                     "youtube": "ek76IXnE9tE",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 30
                 }
             ],
             "enabled": true,
@@ -461,7 +471,8 @@ bwf.routine = {
                     "level": 5,
                     "name": "Tuck Front Level",
                     "youtube": "tiST0765Sfo",
-                    "type": "hold"
+                    "type": "hold",
+                    "maxHold": 30
                 },
                 {
                     "level": 6,

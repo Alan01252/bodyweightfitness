@@ -1,7 +1,25 @@
-<h1>{{exercise.name}}</h1>
-
-<p class="lead">{{exercise.description}}</p>
-
-<div class="youtube-container">
-    <div class="youtube-player" data-id="{{exercise.youtube}}"></div>
+<div class="card">
+    <div class="item item-divider">
+        <h1>{{exercise.name}}</h1>
+    </div>
+    <div class="item item-text-wrap">
+        <div class="row">
+            <div class="col">
+                <h2>{{exercise.description}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col hold-video-holder">
+                <div class="youtube-container">
+                    <div class="youtube-player" data-id="{{exercise.youtube}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+

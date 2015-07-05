@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="item item-divider">
+        <h1>{{exercise.name}}</h1>
+    </div>
+    <div class="item item-text-wrap">
+        <div class="row">
+
+            <div class="col clock-holder">
+                <flip-clock autostart="true" clockFace="MinuteCounter" countdown="true"
+                            time="{{exercise.seconds}}"></flip-clock>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button ng-click="start()" class="button button-block button-positive">Start</button>
+                <button ng-click="stop()" class="button button-block button-assertive">Stop</button>
+            </div>
+        </div>
+    </div>
+</div>

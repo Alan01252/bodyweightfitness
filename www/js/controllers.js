@@ -30,12 +30,12 @@ angular.module('starter.controllers', [])
 
         function labnolThumb(id) {
             console.log("Making thumbs");
-            return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+            return '<img class="youtube-thumb" src="http://i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
         }
 
         function labnolIframe() {
             var iframe = document.createElement("iframe");
-            iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+            iframe.setAttribute("src", "http://www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
             iframe.setAttribute("frameborder", "0");
             iframe.setAttribute("id", "youtube-iframe");
             this.parentNode.replaceChild(iframe, this);
@@ -45,32 +45,47 @@ angular.module('starter.controllers', [])
             return $sce.trustAsResourceUrl(src);
         };
 
-        $scope.findExercise = function (index, name) {
+       function findRepeatExercise (index, name) {
             console.log(bwf.routine.exercises[index]);
-            if (bwf.routine.exercises[index].type === "repeat") {
-                bwf.routine.exercises.forEach(function (item) {
+                var repeatExercise = {};
+                $(bwf.routine.exercises).each(function (exerciseIndex, item) {
+                    console.log(item);
                     if (item.name === bwf.routine.exercises[index].name && item.type !== "repeat") {
                         console.log("Found matching exercise name setting repeat excercise");
                         if (item.type === "category") {
-                            console.log(item);
-                            $scope.repeatExercise = item.levels[item.activeLevel - 1];
+                            repeatExercise = findCategoryExericse(item);
                         } else {
-                            $scope.repeatExercise = item;
+                            repeatExercise = item;
                         }
-
-                        var currentSlide = $('#exercises .slider-slide[data-index=' + index + ']').find('.youtube-player')[0];
-                        if (!($(currentSlide).find('iframe').length > 0) && $scope.repeatExercise.youtube) {
-                            console.log("Setting up video for iframe");
-                            setUpVideos(currentSlide, $scope.repeatExercise.youtube);
-                        }
+                        console.log("using " + repeatExercise.name);
+                        return false;
                     }
-                })
-            }
-
-
+                });
+           return repeatExercise;
         };
 
-        $scope.routine = bwf.routine.exercises;
+        function findCategoryExericse (item) {
+           return item.levels[item.activeLevel - 1];
+        }
+
+        function populateRepeats (routine) {
+            var populatedRoutine = [];
+
+            routine.forEach(function(item, index) {
+                if (item.type === "repeat") {
+                    populatedRoutine.push(findRepeatExercise(index));
+                }  else if (item.type === "category") {
+                    populatedRoutine.push(findCategoryExericse(item));
+                } else {
+                    populatedRoutine.push(item);
+                }
+            });
+
+            return populatedRoutine;
+        }
+
+        $scope.routine = populateRepeats(bwf.routine.exercises);
+        console.log($scope.routine);
     })
 
     .controller('ngSwitch', function ($scope) {

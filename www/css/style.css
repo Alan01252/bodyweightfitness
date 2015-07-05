@@ -1,6 +1,5 @@
 .youtube-container {
-    display: block;
-    margin: 20px auto;
+    display: inline-block;
     width: 100%;
     max-width: 600px;
 }
@@ -48,4 +47,18 @@ div.play-button {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+
+.flip-clock-wrapper {
+    width: auto;
+    display: inline-block;
+}
+
+.clock-holder {
+    text-align: center;
+}
+
+.hold-video-holder {
+    text-align: center;
 }
