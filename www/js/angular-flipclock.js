@@ -66,8 +66,7 @@ angular.module('angular-flipclock', [])
                     }
                 });
 
-                //generate clock object
-                //clock = new FlipClock(element, options);
+                options.clockFace = 'MinuteCounter';
                 clock = element.FlipClock(options);
 
                 if (options['time']) {
