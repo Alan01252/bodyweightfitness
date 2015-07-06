@@ -180,6 +180,7 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Negative Pull Ups",
+                    "description": "5-8 reps",
                     "youtube": "y5sqSwcRZzo",
                     "type": "reps"
                 },
@@ -518,6 +519,14 @@ bwf.routine = {
         },
         {
             "name": "Pushup Progression",
+            "type": "repeat"
+        },
+        {
+            "name": "Rest",
+            "type": "repeat"
+        },
+        {
+            "name": "Row Progression",
             "type": "repeat"
         },
         {
