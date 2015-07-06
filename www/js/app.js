@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-flipclock'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'timer'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -63,5 +63,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $urlRouterProvider.otherwise('/tab/dash');
 
         $ionicConfigProvider.views.maxCache(0);
+        $ionicConfigProvider.tabs.position('bottom');
 
     });

@@ -122,21 +122,21 @@ bwf.routine = {
                     "name": "Wall Plank",
                     "youtube": "6jm4R3K4sJA",
                     "type": "hold",
-                    "maxHold": 60
+                    "maxHold": 60 * 10
                 },
                 {
                     "level": 2,
                     "name": "Stomach-to-Wall Handstand",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
-                    "maxHold": 60
+                    "maxHold": 60 * 10
                 },
                 {
                     "level": 3,
                     "name": "Freestanding Handstand",
                     "youtube": "Y3FSeSecjKA",
                     "type": "hold",
-                    "maxHold": 60
+                    "maxHold": 60 * 10
                 }
             ],
             "enabled": true,

@@ -1,21 +1,27 @@
 <div class="card">
     <div class="item item-divider">
-        <h1>{{exercise.name}}</h1>
+        <h3>{{exercise.name}}</h3>
     </div>
     <div class="item item-text-wrap">
         <div class="row">
 
             <div class="col clock-holder">
-                <flip-clock autostart="true" clockFace="MinuteCounter" countdown="true"
-                            time="{{exercise.seconds}}"></flip-clock>
-
-
+                <h1>
+                    <timer countdown="exercise.seconds" autostart="false" interval="1000">
+                        {{mminutes}}:{{sseconds}}
+                    </timer>
+                </h1>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button ng-click="start()" class="button button-block button-positive">Start</button>
-                <button ng-click="stop()" class="button button-block button-assertive">Stop</button>
+                <button ng-click="startTimer()" class="button button-block button-balanced">Start</button>
+            </div>
+            <div class="col">
+                <button ng-click="stopTimer()" class="button button-block button-assertive">Stop</button>
+            </div>
+            <div class="col">
+                <button ng-click="resetTimer()" class="button button-block button-positive">Reset</button>
             </div>
         </div>
     </div>
