@@ -18,7 +18,14 @@ angular.module('starter.controllers', [])
         };
 
         $scope.$on('timer-stopped', function (event, data) {
+            $scope.timerRunning = false;
         });
+
+        $scope.slideChanged = function (index) {
+            if ($scope.timerRunning === false ) {
+                $scope.$broadcast('timer-reset');
+            }
+        };
 
         function setUpVideos(player, youtubeId) {
             if (!player) {
