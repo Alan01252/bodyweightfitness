@@ -6,7 +6,7 @@
         <h3>{{exercise.description}}</h3>
 
         <div class="row">
-            <div class="col clock-holder">
+            <div class="col clock-holder" id="timer-{{exercise.index}}">
                 <h1>
                     <timer countdown="exercise.maxHold" autostart="false" interval="1000">
                         {{mminutes}}:{{sseconds}}
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <button ng-click="startTimer()" class="button button-block button-balanced">Start</button>
+                <button ng-click="startTimer({{exercise.index}})" class="button button-block button-balanced">Start</button>
             </div>
             <div class="col">
                 <button ng-click="stopTimer()" class="button button-block button-assertive">Stop</button>

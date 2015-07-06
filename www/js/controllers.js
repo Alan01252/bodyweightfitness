@@ -1,14 +1,17 @@
 angular.module('starter.controllers', [])
 
-    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover) {
+    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover, settingsFactory) {
 
-        $scope.startTimer = function () {
-            $scope.$broadcast('timer-start');
+        $scope.settings = settingsFactory.get();
+        $scope.startTimer = function (index) {
+            console.log('timer-' + index);
+            document.getElementById('timer-' + index).getElementsByTagName('timer')[0].start();
             $scope.timerRunning = true;
         };
 
         $scope.stopTimer = function () {
             $scope.$broadcast('timer-stop');
+            $scope.forceStop = true;
             $scope.timerRunning = false;
         };
 
@@ -18,7 +21,11 @@ angular.module('starter.controllers', [])
         };
 
         $scope.$on('timer-stopped', function (event, data) {
-            $scope.timerRunning = false;
+
+            if (!$scope.forceStop && settingsFactory.findSetting("enableSounds")) {
+                document.getElementById('timerEnd').play();
+                $scope.timerRunning = false;
+            }
         });
 
         $scope.slideChanged = function (index) {
@@ -97,13 +104,14 @@ angular.module('starter.controllers', [])
             var populatedRoutine = [];
 
             routine.forEach(function (item, index) {
+                var exercise = item;
                 if (item.type === "repeat") {
-                    populatedRoutine.push(findRepeatExercise(index));
+                    exercise = findRepeatExercise(index);
                 } else if (item.type === "category") {
-                    populatedRoutine.push(findCategoryExericse(item));
-                } else {
-                    populatedRoutine.push(item);
+                    exercise = findCategoryExericse(item);
                 }
+                exercise.index = index;
+                populatedRoutine.push(exercise);
             });
 
             return populatedRoutine;
@@ -118,7 +126,7 @@ angular.module('starter.controllers', [])
         $scope.updateSettings = function (key, value) {
             $($scope.settings.exercises).each(function (exerciseIndex, item) {
                 if (item.key === key) {
-                  item.value = value;
+                    item.value = value;
                 }
             });
 

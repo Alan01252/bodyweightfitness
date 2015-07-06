@@ -25,6 +25,17 @@ angular.module('starter.services', [])
         var settings = null;
 
         return {
+            findSetting: function (key) {
+                var value = null;
+                $(settings).each(function (exerciseIndex, item) {
+                    if (item.key === key) {
+                        value = item.value;
+                        return false;
+                    }
+                });
+
+                return value;
+            },
             add: function (newSettings) {
                 settings = newSettings;
                 localStorage.setObject('settings', settings);
