@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-    .controller('DashCtrl', function ($scope, $sce, $ionicPopover) {
+    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover) {
 
         $scope.startTimer = function () {
             $scope.$broadcast('timer-start');
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
         });
 
         $scope.slideChanged = function (index) {
-            if ($scope.timerRunning === false ) {
+            if ($scope.timerRunning === false) {
                 $scope.$broadcast('timer-reset');
             }
         };
@@ -113,9 +113,21 @@ angular.module('starter.controllers', [])
         console.log($scope.routine);
     })
 
-    .controller('ngSwitch', function ($scope) {
+    .controller('SettingsCtrl', function ($scope, settingsFactory) {
 
-    })
+        $scope.updateSettings = function (key, value) {
+            $($scope.settings.exercises).each(function (exerciseIndex, item) {
+                if (item.key === key) {
+                  item.value = value;
+                }
+            });
 
-    .controller('SettingsCtrl', function ($scope) {
+            console.log($scope.settings);
+            settingsFactory.clear();
+            settingsFactory.add($scope.settings);
+        };
+
+        $scope.settings = settingsFactory.get();
+        console.log($scope.settings);
+
     });

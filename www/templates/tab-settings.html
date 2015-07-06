@@ -1,4 +1,14 @@
-<ion-view view-title="Account">
-  <ion-content>
-  </ion-content>
+<ion-view view-title="Settings">
+    <ion-content>
+        <ul class="list">
+
+            <li class="item item-{{setting.type}}" ng-repeat="setting in settings track by $index">
+                <label class="{{setting.type}}">
+                    <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
+                           ng-change="updateSettings(setting.key,setting)">
+                </label>
+                {{setting.name}}
+            </li>
+        </ul>
+    </ion-content>
 </ion-view>
