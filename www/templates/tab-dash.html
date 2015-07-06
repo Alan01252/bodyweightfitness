@@ -1,6 +1,6 @@
 <ion-view view-title="Dashboard">
     <ion-content>
-            <ion-slide-box on-slide-changed="findExercise($index)" show-pager="false">
+            <ion-slide-box on-slide-changed="slideChanged($index)" show-pager="false">
                 <ion-slide ng-repeat="exercise in routine track by $index">
                     <div ng-switch on="exercise.type">
 
