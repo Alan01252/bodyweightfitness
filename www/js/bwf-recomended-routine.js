@@ -16,7 +16,7 @@ bwf.routine = {
             "type": "reps"
         },
         {
-            "name": "Cat/Camel Bends",
+            "name": "Cat and Camel Bends",
             "description": "Perform 5-10 reps",
             "youtube": "K9bK0BwKFjs",
             "enabled": true,
@@ -115,24 +115,24 @@ bwf.routine = {
         {
             "name": "Handstand Progression",
             "description": "5-10 minutes",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Wall Plank",
                     "youtube": "6jm4R3K4sJA",
                     "type": "hold",
                     "maxHold": 60 * 10
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Stomach-to-Wall Handstand",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
                     "maxHold": 60 * 10
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Freestanding Handstand",
                     "youtube": "Y3FSeSecjKA",
                     "type": "hold",
@@ -145,24 +145,24 @@ bwf.routine = {
         {
             "name": "Support Practice",
             "description": "2-3 minutes",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Parallel Bar Support",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
                     "maxHold": 180
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Ring Support",
                     "youtube": "V3IkFK5lvRw",
                     "type": "hold",
                     "maxHold": 180
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Rings Turned Out Support Hold",
                     "youtube": "8gmyhBScTLk",
                     "type": "hold",
@@ -175,29 +175,29 @@ bwf.routine = {
         {
             "name": "Pullup Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Negative Pull Ups",
                     "description": "5-8 reps",
                     "youtube": "y5sqSwcRZzo",
                     "type": "reps"
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Pull Up",
                     "youtube": "RsnbDcsZbpk",
                     "type": "reps"
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "L-sit Pull Up",
                     "youtube": "quFBLtkxMRM",
                     "type": "reps"
                 },
                 {
-                    "level": 4,
+                    "level": 3,
                     "name": "Pull Over",
                     "youtube": "saLtuweg8As",
                     "type": "reps"
@@ -214,22 +214,22 @@ bwf.routine = {
         {
             "name": "Dipping Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Parallel Bar Dips",
                     "youtube": "_3RaUMKcGQI",
                     "type": "reps"
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Ring Dips",
                     "youtube": "cPFmMwC62d8",
                     "type": "reps"
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Ring Dips in L-Sit",
                     "youtube": "K-fNLVAstcw",
                     "type": "reps"
@@ -277,22 +277,22 @@ bwf.routine = {
         {
             "name": "Squat Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Assisted Bodyweight Squats",
                     "youtube": "OuR_Fp7AB0c",
                     "type": "reps"
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Bodyweight Squat",
                     "youtube": "AkQbbDGMzJk",
                     "type": "reps"
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Deep Step-up",
                     "youtube": "487aR3A7HvM",
                     "type": "reps"
@@ -308,31 +308,31 @@ bwf.routine = {
         {
             "name": "L-sit Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Foot-supported L-sit",
                     "youtube": "IUZJoSP66HI",
                     "type": "hold",
                     "maxHold": 30
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "One-Leg Foot Supported L-sit",
                     "youtube": "IUZJoSP66HI?t=144",
                     "type": "hold",
                     "maxHold": 30
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Tuck L-sit",
                     "youtube": "487aR3A7HvM?t=170",
                     "type": "hold",
                     "maxHold": 30
                 },
                 {
-                    "level": 4,
+                    "level": 3,
                     "name": "L-sit",
                     "youtube": "ek76IXnE9tE",
                     "type": "hold",
@@ -381,52 +381,52 @@ bwf.routine = {
         {
             "name": "Pushup Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Wall Pushup",
                     "youtube": "a6YHbXD2XlU",
                     "type": "reps"
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Incline Pushup",
                     "youtube": "dWbmyYpNONk",
                     "type": "reps"
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Pushup",
                     "youtube": "Eh00_rniF8E",
                     "type": "reps"
                 },
                 {
-                    "level": 4,
+                    "level": 3,
                     "name": "Diamond Pushup",
                     "youtube": "s8Ft6xyN5fw",
                     "type": "reps"
                 },
                 {
-                    "level": 5,
+                    "level": 4,
                     "name": "Rings Wide Pushup",
                     "youtube": "jbQyi9xshOU",
                     "type": "reps"
                 },
                 {
-                    "level": 6,
+                    "level": 5,
                     "name": "Rings Push Ups",
                     "youtube": "jbQyi9xshOU",
                     "type": "reps"
                 },
                 {
-                    "level": 7,
+                    "level": 6,
                     "name": "Rings Turned Out Push Up",
                     "youtube": "MrlyEIpe0LI",
                     "type": "reps"
                 },
                 {
-                    "level": 8,
+                    "level": 7,
                     "name": "Rings Turned Out PPPU",
                     "youtube": "-kwe1EOiWMY",
                     "type": "reps"
@@ -442,53 +442,53 @@ bwf.routine = {
         {
             "name": "Row Progression",
             "description": "3x(5-8)",
-            "activeLevel": 1,
+            "activeLevel": 0,
             "levels": [
                 {
-                    "level": 1,
+                    "level": 0,
                     "name": "Vertical Row",
                     "youtube": "e5fdh9_kH_Y",
                     "type": "reps"
                 },
                 {
-                    "level": 2,
+                    "level": 1,
                     "name": "Incline Row",
                     "youtube": "G28qN9FCKE",
                     "type": "reps"
                 },
                 {
-                    "level": 3,
+                    "level": 2,
                     "name": "Horizontal Row",
                     "youtube": "dvkIaarnf0g",
                     "type": "reps"
                 },
                 {
-                    "level": 4,
+                    "level": 3,
                     "name": "Wide Row",
                     "youtube": "1yMRvsuk9Xg",
                     "type": "reps"
                 },
                 {
-                    "level": 5,
-                    "name": "Tuck Front Level",
+                    "level": 4,
+                    "name": "Tuck Front Lever",
                     "youtube": "tiST0765Sfo",
                     "type": "hold",
                     "maxHold": 30
                 },
                 {
-                    "level": 6,
+                    "level": 5,
                     "name": "Tuck Ice Cream Maker",
                     "youtube": "AszLwoAvLKg",
                     "type": "reps"
                 },
                 {
-                    "level": 7,
+                    "level": 6,
                     "name": "Tuck Front Level Row",
                     "youtube": "MrlyEIpe0LI",
                     "type": "reps"
                 },
                 {
-                    "level": 8,
+                    "level": 7,
                     "name": "Advanced Tuck Front Level Row",
                     "youtube": "cVdb8oUGKAw",
                     "type": "reps"

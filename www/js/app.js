@@ -57,7 +57,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                         controller: 'SettingsCtrl'
                     }
                 }
+            })
+
+            .state('tab.exercisesettings', {
+                cache: false,
+                url: '/settings/exercise/:exerciseName',
+                views: {
+                    'tab-exercise-settings': {
+                        templateUrl: 'templates/tab-exercisesettings.html',
+                        controller: 'ExercisesettingsCtrl'
+                    }
+                }
             });
+        ;
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/routine');

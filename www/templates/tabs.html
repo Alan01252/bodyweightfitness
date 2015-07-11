@@ -5,15 +5,18 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Routine" icon-off="fa fa-heart" icon-on="fa fa-heart" href="#/tab/routing">
-    <ion-nav-view name="tab-routine"></ion-nav-view>
-  </ion-tab>
+    <!-- Dashboard Tab -->
+    <ion-tab title="Routine" icon-off="fa fa-heart" icon-on="fa fa-heart" href="#/tab/routing">
+        <ion-nav-view name="tab-routine"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Settings Tab -->
-  <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
-    <ion-nav-view name="tab-settings"></ion-nav-view>
-  </ion-tab>
+    <!-- Settings Tab -->
+    <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
+        <ion-nav-view name="tab-settings"></ion-nav-view>
+    </ion-tab>
 
+    <ion-tab title="Exercise Settings" href="#/tab/exercise-settings" hidden="true">
+        <ion-nav-view name="tab-exercise-settings"></ion-nav-view>
+    </ion-tab>
 
 </ion-tabs>

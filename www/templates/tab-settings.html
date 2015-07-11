@@ -1,7 +1,7 @@
 <ion-view view-title="Settings">
     <ion-content>
+        <h3>Global settings</h3>
         <ul class="list">
-
             <li class="item item-{{setting.type}}" ng-repeat="setting in settings track by $index">
                 <label class="{{setting.type}}">
                     <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
@@ -10,5 +10,12 @@
                 {{setting.name}}
             </li>
         </ul>
+
+
+        <h3>Exercise settings</h3>
+        <ion-item ng-repeat="exercise in exercises" href="#/tab/settings/exercise/{{exercise.name}}">
+            {{exercise.name}}
+        </ion-item>
+
     </ion-content>
 </ion-view>

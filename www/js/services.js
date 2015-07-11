@@ -20,6 +20,35 @@ angular.module('starter.services', [])
         }
     }])
 
+    .factory('routineFactory', ['$localStorage', function (localStorage) {
+        var routine = null;
+
+        localStorage.remove('routine');
+
+        return {
+            add: function (newRoutine) {
+                routine = newRoutine;
+                localStorage.setObject('routine', routine);
+            },
+            clear: function () {
+                localStorage.remove('routine');
+                routine = null;
+            },
+            get: function () {
+                if (routine) {
+                    return routine;
+                }
+
+                var storedRoutine = localStorage.getObject('routine');
+                if (!$.isEmptyObject(storedRoutine)) {
+                    console.log("Stored routine " + storedRoutine);
+                    routine = storedRoutine;
+                    return routine;
+                }
+                return bwf.routine;
+            }
+        }
+    }])
 
     .factory('settingsFactory', ['$localStorage', function (localStorage) {
         var settings = null;

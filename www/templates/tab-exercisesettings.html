@@ -1,0 +1,31 @@
+<ion-view view-title="{{exercise.name}} Settings">
+    <ion-content>
+        <ul class="list">
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input ng-model="exercise.enabled" type="checkbox" value="exercise.enabled"
+                           ng-change="updateSettings(exercise.name,exercise)">
+                </label>
+                Enabled
+            </li>
+        </ul>
+
+        <div ng-if="exercise.type === 'category' ">
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Levels
+                </div>
+                <select ng-model="exercise.activeLevel" type="select"
+                        ng-change="updateActiveLevel(exercise.name, exercise.activeLevel)"
+                        >
+                    <option ng-repeat="item in exercise.levels" value="{{item.level}}">{{item.name}}</option>
+                </select>
+            </label>
+
+        </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

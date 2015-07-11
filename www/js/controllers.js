@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover, settingsFactory) {
+    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover, settingsFactory, routineFactory) {
 
         $scope.settings = settingsFactory.get();
         $scope.startTimer = function (index) {
@@ -77,12 +77,10 @@ angular.module('starter.controllers', [])
             return $sce.trustAsResourceUrl(src);
         };
 
-        function findRepeatExercise(index, name) {
-            console.log(bwf.routine.exercises[index]);
+        function findRepeatExercise(index, routine) {
             var repeatExercise = {};
-            $(bwf.routine.exercises).each(function (exerciseIndex, item) {
-                console.log(item);
-                if (item.name === bwf.routine.exercises[index].name && item.type !== "repeat") {
+            $(routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === routine.exercises[index].name && item.type !== "repeat") {
                     console.log("Found matching exercise name setting repeat excercise");
                     if (item.type === "category") {
                         repeatExercise = findCategoryExericse(item);
@@ -97,16 +95,16 @@ angular.module('starter.controllers', [])
         };
 
         function findCategoryExericse(item) {
-            return item.levels[item.activeLevel - 1];
+            return item.levels[item.activeLevel];
         }
 
         function populateRepeats(routine) {
             var populatedRoutine = [];
 
-            routine.forEach(function (item, index) {
+            routine.exercises.forEach(function (item, index) {
                 var exercise = item;
                 if (item.type === "repeat") {
-                    exercise = findRepeatExercise(index);
+                    exercise = findRepeatExercise(index, routine);
                 } else if (item.type === "category") {
                     exercise = findCategoryExericse(item);
                 }
@@ -117,11 +115,59 @@ angular.module('starter.controllers', [])
             return populatedRoutine;
         }
 
-        $scope.routine = populateRepeats(bwf.routine.exercises);
+        $scope.routine = populateRepeats(routineFactory.get());
+        console.log("Routine scope");
         console.log($scope.routine);
     })
 
-    .controller('SettingsCtrl', function ($scope, settingsFactory) {
+    .controller('ExercisesettingsCtrl', function ($scope, $rootScope, $stateParams, routineFactory) {
+        $rootScope.showCustomBack = true;
+        $scope.showCustomBack = true;
+        $scope.routine = routineFactory.get();
+
+
+        $scope.updateActiveLevel = function (name, value) {
+
+            $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === name) {
+                    console.log("Updating index " + exerciseIndex + " active level " + value);
+                    item.activeLevel = value;
+                }
+            });
+
+            routineFactory.clear();
+            routineFactory.add($scope.routine);
+            console.log($scope.routine);
+        };
+
+        $scope.updateSettings = function (name, value) {
+
+            $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === value) {
+                    item.value = value;
+                }
+            });
+            routineFactory.clear();
+            routineFactory.add($scope.routine);
+
+            console.log($scope.routine);
+        };
+
+        function findExerciseByName(name) {
+            var foundExercise = {};
+            $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === name) {
+                    foundExercise = item;
+                    return false;
+                }
+            });
+            return foundExercise;
+        }
+
+        $scope.exercise = findExerciseByName($stateParams.exerciseName);
+    })
+
+    .controller('SettingsCtrl', function ($scope, settingsFactory, routineFactory) {
 
         $scope.updateSettings = function (key, value) {
             $($scope.settings.exercises).each(function (exerciseIndex, item) {
@@ -129,13 +175,24 @@ angular.module('starter.controllers', [])
                     item.value = value;
                 }
             });
-
-            console.log($scope.settings);
             settingsFactory.clear();
             settingsFactory.add($scope.settings);
         };
 
+        function getExercises(routine) {
+            var exercises = [];
+
+            routine.exercises.forEach(function (item, index) {
+                if (item.type !== "repeat" && item.type !== "done") {
+                    exercises.push(item);
+                }
+            });
+
+            return exercises;
+        }
+
+        $scope.exercises = getExercises(routineFactory.get());
         $scope.settings = settingsFactory.get();
-        console.log($scope.settings);
+        console.log($scope.exercises);
 
     });
