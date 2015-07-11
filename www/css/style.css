@@ -56,3 +56,7 @@ div.play-button {
 .hold-video-holder {
     text-align: center;
 }
+
+.card {
+    min-height: 470px;
+}
