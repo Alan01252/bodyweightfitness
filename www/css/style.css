@@ -58,5 +58,14 @@ div.play-button {
 }
 
 .card {
-    min-height: 470px;
+    min-height: 100%;
+}
+
+.right {
+    float:right;
+}
+
+.exercise-name {
+    vertical-align: middle;
+    line-height: 50px;
 }

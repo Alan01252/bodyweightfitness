@@ -1,6 +1,12 @@
 angular.module('starter.controllers', [])
 
-    .controller('RoutineCtrl', function ($scope, $sce, $ionicPopover, settingsFactory, routineFactory) {
+    .controller('TabsCtrl', function ($scope, $rootScope, $state) {
+    })
+
+    .controller('RoutineCtrl', function ($rootScope, $scope, $sce, $ionicPopover, settingsFactory, routineFactory) {
+
+        $rootScope.showCustomBack = false;
+        $scope.showCustomBack = false;
 
         $scope.settings = settingsFactory.get();
         $scope.startTimer = function (index) {
@@ -109,7 +115,9 @@ angular.module('starter.controllers', [])
                     exercise = findCategoryExericse(item);
                 }
                 exercise.index = index;
-                populatedRoutine.push(exercise);
+                if (exercise.enabled) {
+                    populatedRoutine.push(exercise);
+                }
             });
 
             return populatedRoutine;
@@ -167,7 +175,10 @@ angular.module('starter.controllers', [])
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
     })
 
-    .controller('SettingsCtrl', function ($scope, settingsFactory, routineFactory) {
+    .controller('SettingsCtrl', function ($scope, $rootScope, settingsFactory, routineFactory) {
+
+        $rootScope.showCustomBack = false;
+        $scope.showCustomBack = false;
 
         $scope.updateSettings = function (key, value) {
             $($scope.settings.exercises).each(function (exerciseIndex, item) {

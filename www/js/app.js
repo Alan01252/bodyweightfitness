@@ -7,7 +7,12 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'timer'])
 
-    .run(function ($ionicPlatform) {
+    .run(function ($ionicPlatform, $rootScope) {
+
+        $rootScope.goBack = function () {
+            window.history.back();
+        };
+
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -23,6 +28,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
+        $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.

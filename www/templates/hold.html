@@ -1,9 +1,11 @@
 <div class="card">
-    <div class="item item-divider bar-calm">
-        <h3>{{exercise.name}}</h3>
+    <div class="item item-divider">
+        <a class="button button-icon icon ion-gear-a right" href="#/tab/settings/exercise/{{exercise.name}}"></a>
+        <h3 class="exercise-name">{{exercise.name}}</h3>
     </div>
     <div class="item item-text-wrap">
         <h3>{{exercise.description}}</h3>
+
 
         <div class="row">
             <div class="col clock-holder" id="timer-{{exercise.index}}">
