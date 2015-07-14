@@ -3,7 +3,10 @@ angular.module('starter.controllers', [])
     .controller('TabsCtrl', function ($scope, $rootScope, $state) {
     })
 
-    .controller('RoutineCtrl', function ($rootScope, $scope, $sce, $ionicPopover, settingsFactory, routineFactory) {
+    .controller('RoutineCtrl', function ($rootScope, $scope, $sce, $ionicSlideBoxDelegate, settingsFactory, routineFactory, currentSlideFactory) {
+
+
+        $rootScope.currentSlide = null;
 
         $rootScope.showCustomBack = false;
         $scope.showCustomBack = false;
@@ -35,6 +38,9 @@ angular.module('starter.controllers', [])
         });
 
         $scope.slideChanged = function (index) {
+            console.log("slide changed");
+            currentSlideFactory.set(index);
+            console.log($rootScope.currentSlide);
             if ($scope.timerRunning === false) {
                 $scope.$broadcast('timer-reset');
             }
@@ -63,6 +69,11 @@ angular.module('starter.controllers', [])
 
         $scope.$on("$ionicView.afterEnter", function (scopes, states) {
             setUpVideos();
+            var currentSlide = currentSlideFactory.get();
+            console.log(currentSlide);
+            if (currentSlide !== null) {
+                $ionicSlideBoxDelegate.slide(currentSlide);
+            }
         });
 
 

@@ -20,6 +20,18 @@ angular.module('starter.services', [])
         }
     }])
 
+    .factory('currentSlideFactory', ['$localStorage', function (localStorage) {
+        var currentSlide = null;
+        return {
+            set: function (value) {
+                currentSlide = value;
+            },
+            get: function () {
+                return currentSlide;
+            }
+        }
+    }])
+
     .factory('routineFactory', ['$localStorage', function (localStorage) {
         var routine = null;
 
