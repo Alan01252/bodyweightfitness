@@ -180,10 +180,30 @@ angular.module('starter.controllers', [])
                     return false;
                 }
             });
+
+            console.log(foundExercise);
+            if ($.isEmptyObject(foundExercise)) {
+                console.log("here?");
+                $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                    console.log(item.type);
+                    if (item.type === "category") {
+                        $(item.levels).each(function (exerciseIndex, level) {
+                            console.log(level.name);
+                            if (level.name === name) {
+                                foundExercise = item;
+                                return false;
+                            }
+                        });
+                    }
+                });
+            }
+
             return foundExercise;
         }
 
+        console.log($stateParams.exerciseName)
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
+        console.log($scope.exercise);
     })
 
     .controller('SettingsCtrl', function ($scope, $rootScope, settingsFactory, routineFactory) {
