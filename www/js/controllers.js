@@ -146,7 +146,9 @@ angular.module('starter.controllers', [])
             return populatedRoutine;
         }
 
-        $scope.routine = populateRepeats(routineFactory.get());
+        var rawRoutine = routineFactory.get();
+        $scope.routine = populateRepeats(rawRoutine);
+        $scope.routineName = rawRoutine.name;
 
     })
 

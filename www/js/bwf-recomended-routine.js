@@ -1,5 +1,6 @@
 var bwf = bwf || {};
 bwf.routine = {
+    "name": "Reddit BWF - Recommend Routine",
     "exercises": [
         {
             "name": "Wall extensions",
