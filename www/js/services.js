@@ -20,7 +20,7 @@ angular.module('starter.services', [])
         }
     }])
 
-    .factory('currentSlideFactory', ['$localStorage', function (localStorage) {
+    .factory('currentSlideFactory', [function () {
         var currentSlide = null;
         return {
             set: function (value) {
@@ -35,9 +35,13 @@ angular.module('starter.services', [])
     .factory('routineFactory', ['$localStorage', function (localStorage) {
         var routine = null;
 
+
         return {
             add: function (newRoutine) {
                 routine = newRoutine;
+                localStorage.remove('routine');
+                console.log("storing routine");
+                console.log(routine);
                 localStorage.setObject('routine', routine);
             },
             clear: function () {

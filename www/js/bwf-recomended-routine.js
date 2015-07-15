@@ -87,7 +87,7 @@ bwf.routine = {
         {
             "name": "Hollow Hold",
             "description": "10 - 60 seconds hold",
-            "youtube": "Y3FSeSecjKA",
+            "youtube": "LlDNef_Ztsc",
             "maxHold": 60,
             "enabled": true,
             "type": "hold"

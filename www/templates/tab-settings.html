@@ -1,21 +1,24 @@
 <ion-view view-title="Settings" hide-back-button="false">
     <ion-content>
-        <h3>Global settings</h3>
-        <ul class="list">
-            <li class="item item-{{setting.type}}" ng-repeat="setting in settings track by $index">
-                <label class="{{setting.type}}">
-                    <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
-                           ng-change="updateSettings(setting.key,setting)">
-                </label>
-                {{setting.name}}
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col">
+                <h3>Global settings</h3>
+                <ul class="list">
+                    <li class="item item-{{setting.type}}" ng-repeat="setting in settings track by $index">
+                        <label class="{{setting.type}}">
+                            <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
+                                   ng-change="updateSettings(setting.key,setting)">
+                        </label>
+                        {{setting.name}}
+                    </li>
+                </ul>
 
 
-        <h3>Exercise settings</h3>
-        <ion-item ng-repeat="exercise in exercises" href="#/tab/settings/exercise/{{exercise.name}}">
-            {{exercise.name}}
-        </ion-item>
-
+                <h3>Exercise settings</h3>
+                <ion-item ng-repeat="exercise in exercises" href="#/tab/settings/exercise/{{exercise.name}}">
+                    {{exercise.name}}
+                </ion-item>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

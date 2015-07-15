@@ -5,9 +5,6 @@ angular.module('starter.controllers', [])
 
     .controller('RoutineCtrl', function ($rootScope, $scope, $sce, $ionicSlideBoxDelegate, settingsFactory, routineFactory, currentSlideFactory) {
 
-
-        $rootScope.currentSlide = null;
-
         $rootScope.showCustomBack = false;
         $scope.showCustomBack = false;
 
@@ -48,8 +45,9 @@ angular.module('starter.controllers', [])
 
         function setUpVideos(player, youtubeId) {
             if (!player) {
-                var v = $(".youtube-player");
+                var v = $(".youtube-player").unbind();
                 [].forEach.call(v, function (item) {
+                    $(item).empty();
                     var p = document.createElement("div");
                     p.innerHTML = labnolThumb(item.dataset.id);
                     p.onclick = labnolIframe;
@@ -57,6 +55,7 @@ angular.module('starter.controllers', [])
                 });
             } else {
                 console.log("Creating thumbnail for image");
+                $(player).empty();
                 var p = document.createElement("div");
                 if (youtubeId) {
                     console.log("Creating thumbnail for image");
@@ -67,13 +66,25 @@ angular.module('starter.controllers', [])
             }
         };
 
+
         $scope.$on("$ionicView.afterEnter", function (scopes, states) {
-            setUpVideos();
+
+            $rootScope.showCustomBack = false;
+            $scope.showCustomBack = false;
+
+            console.log("Updating routine");
+            $scope.routine = populateRepeats(routineFactory.get());
+            console.log("Getting current slide");
             var currentSlide = currentSlideFactory.get();
-            console.log(currentSlide);
+            console.log("Current slide was" + currentSlide);
             if (currentSlide !== null) {
+                console.log("found current slide moving to " + currentSlide);
                 $ionicSlideBoxDelegate.slide(currentSlide);
             }
+
+            console.log("setting up videos");
+            setUpVideos();
+
         });
 
 
@@ -135,8 +146,7 @@ angular.module('starter.controllers', [])
         }
 
         $scope.routine = populateRepeats(routineFactory.get());
-        console.log("Routine scope");
-        console.log($scope.routine);
+
     })
 
     .controller('ExercisesettingsCtrl', function ($scope, $rootScope, $stateParams, routineFactory) {
@@ -154,9 +164,7 @@ angular.module('starter.controllers', [])
                 }
             });
 
-            routineFactory.clear();
-            routineFactory.add($scope.routine);
-            console.log($scope.routine);
+            routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
         };
 
         $scope.updateSettings = function (name, value) {
@@ -166,10 +174,7 @@ angular.module('starter.controllers', [])
                     item.value = value;
                 }
             });
-            routineFactory.clear();
-            routineFactory.add($scope.routine);
-
-            console.log($scope.routine);
+            routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
         };
 
         function findExerciseByName(name) {
@@ -203,7 +208,6 @@ angular.module('starter.controllers', [])
 
         console.log($stateParams.exerciseName)
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
-        console.log($scope.exercise);
     })
 
     .controller('SettingsCtrl', function ($scope, $rootScope, settingsFactory, routineFactory) {

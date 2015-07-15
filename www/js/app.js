@@ -7,10 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'timer'])
 
-    .run(function ($ionicPlatform, $rootScope) {
+    .run(function ($ionicPlatform, $ionicHistory, $rootScope) {
 
-        $rootScope.goBack = function () {
-            window.history.back();
+        $rootScope.goBack = function ($event) {
+                $ionicHistory.goBack();
         };
 
         $ionicPlatform.ready(function () {
@@ -79,8 +79,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/routine');
-
-        $ionicConfigProvider.views.maxCache(0);
         $ionicConfigProvider.tabs.position('bottom');
 
     });
