@@ -13,6 +13,7 @@ angular.module('starter.controllers', [])
             console.log('timer-' + index);
             document.getElementById('timer-' + index).getElementsByTagName('timer')[0].start();
             $scope.timerRunning = true;
+            $scope.forceStop = false;
         };
 
         $scope.stopTimer = function () {
@@ -24,13 +25,39 @@ angular.module('starter.controllers', [])
         $scope.resetTimer = function () {
             $scope.$broadcast('timer-reset');
             $scope.timerRunning = false;
+            $scope.forceStop = false;
         };
 
         $scope.$on('timer-stopped', function (event, data) {
 
+
+            console.log("Timer stopped");
+            console.log("Force stop event" + $scope.forceStop);
             if (!$scope.forceStop && settingsFactory.findSetting("enableSounds")) {
-                document.getElementById('timerEnd').play();
-                $scope.timerRunning = false;
+
+                console.log("Trying to play finishing sound");
+                var audio = document.getElementById('timerEnd');
+                if (typeof Media !== 'undefined') {
+                    var url = audio.getAttribute('src');
+
+                    var currentPlatform = ionic.Platform.platform();
+                    if(currentPlatform.toLowerCase() === "android") {
+                        url = "/android_asset/www/" + url;
+                    }
+
+                    $scope.timerRunning = false;
+                    var my_media = new Media(url,
+                        function () {
+                            console.log("playAudio():Audio Success");
+                        },
+                        function (err) {
+                            console.log("playAudio():Audio Error: " + err);
+                        }
+                    );
+                    my_media.play();
+                } else {
+                    audio.play();
+                }
             }
         });
 
