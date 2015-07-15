@@ -86,7 +86,8 @@ bwf.routine = {
         },
         {
             "name": "Hollow Hold",
-            "description": "10 - 60 seconds hold",
+            "description": "Lie down flat on your back, hold arms and legs straight out from the body, slowly raise shoulders and legs from the ground. Make sure back remains flat against the floor" +
+            " hold for 10 - 60 seconds",
             "youtube": "LlDNef_Ztsc",
             "maxHold": 60,
             "enabled": true,
@@ -94,7 +95,7 @@ bwf.routine = {
         },
         {
             "name": "Arch",
-            "description": "10 - 60 seconds hold",
+            "description": "Lay on your stomach with arms out in front of you and legs straight. Lift your heels of the floor and slightly lift your arms. Hold for 10 - 60 seconds",
             "youtube": "wrzjVTK2brk",
             "enabled": true,
             "maxHold": 60,
@@ -102,14 +103,15 @@ bwf.routine = {
         },
         {
             "name": "Squat jumps",
-            "description": "10 - 20 reps",
+            "description": "Stand with feet shoulder-width apart arms hanging by your sides. Squat down and then immediately swing your arms overhead and jump upwards. 10 - 20 reps",
             "youtube": "CVaEhXotL7M",
             "enabled": true,
             "type": "reps"
         },
         {
             "name": "Burpees",
-            "description": "10 - 20 reps",
+            "description": " Begin in standing position, then drop to squat, kick yor feet back keeping arms extended. " +
+            "Immediately return your feet to squat position and then perform a squat jump. 10 - 20 reps",
             "youtube": "41knz-ZUiBU",
             "enabled": true,
             "type": "reps"
@@ -122,6 +124,7 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Wall Plank",
+                    "description": "Start in push-up position with feet against the wall. Instead of performing push-ups hold this for 10 - 60 seconds.",
                     "youtube": "6jm4R3K4sJA",
                     "type": "hold",
                     "maxHold": 60 * 10,
@@ -130,6 +133,8 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Stomach-to-Wall Handstand",
+                    "description": "Start in push-up position with feet against the wall. Move your hands closer to the wall, and climb up the wall with your feet. " +
+                                    "Aim to get your stomach as to the wall and hold for 10 - 60 seconds.",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
                     "maxHold": 60 * 10,

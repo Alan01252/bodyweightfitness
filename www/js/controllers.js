@@ -138,7 +138,8 @@ angular.module('starter.controllers', [])
                 }
                 exercise.index = index;
                 if (exercise.enabled) {
-                    populatedRoutine.push(exercise);
+
+                    populatedRoutine.push(JSON.parse(JSON.stringify(exercise)));
                 }
             });
 
