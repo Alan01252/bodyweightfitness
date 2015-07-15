@@ -35,8 +35,6 @@ angular.module('starter.services', [])
     .factory('routineFactory', ['$localStorage', function (localStorage) {
         var routine = null;
 
-        localStorage.remove('routine');
-
         return {
             add: function (newRoutine) {
                 routine = newRoutine;
