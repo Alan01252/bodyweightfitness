@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
                     var url = audio.getAttribute('src');
 
                     var currentPlatform = ionic.Platform.platform();
-                    if(currentPlatform.toLowerCase() === "android") {
+                    if (currentPlatform.toLowerCase() === "android") {
                         url = "/android_asset/www/" + url;
                     }
 
@@ -95,12 +95,16 @@ angular.module('starter.controllers', [])
 
 
         $scope.$on("$ionicView.afterEnter", function (scopes, states) {
+            $rootScope.showCustomBack = true;
+            $scope.showCustomBack = true;
+            setUpVideos();
+        });
 
-            $rootScope.showCustomBack = false;
-            $scope.showCustomBack = false;
-
+        $rootScope.$on('updateRoutine', function () {
             console.log("Updating routine");
             $scope.routine = populateRepeats(routineFactory.get());
+            console.log("setting up videos");
+            setUpVideos();
             console.log("Getting current slide");
             var currentSlide = currentSlideFactory.get();
             console.log("Current slide was" + currentSlide);
@@ -108,10 +112,6 @@ angular.module('starter.controllers', [])
                 console.log("found current slide moving to " + currentSlide);
                 $ionicSlideBoxDelegate.slide(currentSlide);
             }
-
-            console.log("setting up videos");
-            setUpVideos();
-
         });
 
 
@@ -165,7 +165,6 @@ angular.module('starter.controllers', [])
                 }
                 exercise.index = index;
                 if (exercise.enabled) {
-
                     populatedRoutine.push(JSON.parse(JSON.stringify(exercise)));
                 }
             });
@@ -195,6 +194,7 @@ angular.module('starter.controllers', [])
             });
 
             routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
+            $rootScope.$emit('updateRoutine');
         };
 
         $scope.updateSettings = function (name, value) {
@@ -205,6 +205,7 @@ angular.module('starter.controllers', [])
                 }
             });
             routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
+            $rootScope.$emit('updateRoutine');
         };
 
         function findExerciseByName(name) {
