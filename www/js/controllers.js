@@ -95,8 +95,8 @@ angular.module('starter.controllers', [])
 
 
         $scope.$on("$ionicView.afterEnter", function (scopes, states) {
-            $rootScope.showCustomBack = true;
-            $scope.showCustomBack = true;
+            $rootScope.showCustomBack = false;
+            $scope.showCustomBack = false;
             setUpVideos();
         });
 
