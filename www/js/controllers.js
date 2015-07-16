@@ -103,8 +103,6 @@ angular.module('starter.controllers', [])
         $rootScope.$on('updateRoutine', function () {
             console.log("Updating routine");
             $scope.routine = populateRepeats(routineFactory.get());
-            console.log("setting up videos");
-            setUpVideos();
             console.log("Getting current slide");
             var currentSlide = currentSlideFactory.get();
             console.log("Current slide was" + currentSlide);
