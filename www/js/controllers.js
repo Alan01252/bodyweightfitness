@@ -37,27 +37,15 @@ angular.module('starter.controllers', [])
 
                 console.log("Trying to play finishing sound");
                 var audio = document.getElementById('timerEnd');
-                if (typeof Media !== 'undefined') {
-                    var url = audio.getAttribute('src');
-
-                    var currentPlatform = ionic.Platform.platform();
-                    if (currentPlatform.toLowerCase() === "android") {
+                var url = audio.getAttribute('src');
+                var currentPlatform = ionic.Platform.platform();
+                if (currentPlatform.toLowerCase() === "android") {
+                    if (!url.match("^/android_asset")) {
                         url = "/android_asset/www/" + url;
+                        audio.setAttribute('src', url);
                     }
-
-                    $scope.timerRunning = false;
-                    var my_media = new Media(url,
-                        function () {
-                            console.log("playAudio():Audio Success");
-                        },
-                        function (err) {
-                            console.log("playAudio():Audio Error: " + err);
-                        }
-                    );
-                    my_media.play();
-                } else {
-                    audio.play();
                 }
+                audio.play();
             }
         });
 
