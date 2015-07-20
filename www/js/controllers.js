@@ -217,7 +217,6 @@ angular.module('starter.controllers', [])
 
             console.log(foundExercise);
             if ($.isEmptyObject(foundExercise)) {
-                console.log("here?");
                 $($scope.routine.exercises).each(function (exerciseIndex, item) {
                     console.log(item.type);
                     if (item.type === "category") {
