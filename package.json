@@ -23,6 +23,7 @@
     "cordova-plugin-media"
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }
