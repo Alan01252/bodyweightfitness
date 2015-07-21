@@ -203,7 +203,7 @@ bwf.routine = {
                     "level": 0,
                     "name": "Negative Pull Ups",
                     "description": "Get a chair and stand on it, next hold onto the pull up bar and slowly lower yourself down, perform 5-8 reps of this exercise",
-                    "youtube": "y5sqSwcRZzo",
+                    "youtube": "Opr72q6NKTc",
                     "type": "reps",
                     "enabled": true
                 },
