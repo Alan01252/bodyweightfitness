@@ -11,18 +11,27 @@ angular.module('starter.controllers', [])
         $scope.settings = settingsFactory.get();
         $scope.startTimer = function (index) {
             console.log('timer-' + index);
+            if (window.plugins) {
+                console.log("Making sure screen kept alive");
+                window.plugins.insomnia.keepAwake();
+            }
             document.getElementById('timer-' + index).getElementsByTagName('timer')[0].start();
             $scope.timerRunning = true;
             $scope.forceStop = false;
         };
 
         $scope.stopTimer = function () {
+
             $scope.$broadcast('timer-stop');
             $scope.forceStop = true;
             $scope.timerRunning = false;
         };
 
         $scope.resetTimer = function () {
+            if (window.plugins) {
+                console.log("Allowing screen to sleep again");
+                window.plugins.insomnia.allowSleepAgain();
+            }
             $scope.$broadcast('timer-reset');
             $scope.timerRunning = false;
             $scope.forceStop = false;
@@ -30,6 +39,10 @@ angular.module('starter.controllers', [])
 
         $scope.$on('timer-stopped', function (event, data) {
 
+            if (window.plugins) {
+                console.log("Allowing screen to sleep again");
+                window.plugins.insomnia.allowSleepAgain();
+            }
 
             console.log("Timer stopped");
             console.log("Force stop event" + $scope.forceStop);
@@ -57,7 +70,7 @@ angular.module('starter.controllers', [])
                 $scope.$broadcast('timer-reset');
             }
 
-            $("iframe").each(function(index, item) {
+            $("iframe").each(function (index, item) {
                 item.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
             });
         };
@@ -257,13 +270,13 @@ angular.module('starter.controllers', [])
             return exercises;
         }
 
-        $scope.clearRoutine = function() {
+        $scope.clearRoutine = function () {
             var confirmPopup = $ionicPopup.confirm({
                 title: 'Reset current routine',
                 template: 'Are you sure you want to reset the current routine?'
             });
-            confirmPopup.then(function(res) {
-                if(res) {
+            confirmPopup.then(function (res) {
+                if (res) {
                     routineFactory.clear();
                     $scope.exercises = getExercises(routineFactory.get());
                     $rootScope.$emit('updateRoutine');
