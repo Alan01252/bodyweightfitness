@@ -125,7 +125,8 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Wall Plank",
-                    "description": "Start in push-up position with feet against the wall. Instead of performing push-ups hold this for 10 - 60 seconds.",
+                    "description": "Start in push-up position with feet against the wall. Instead of performing push-ups hold this for 10 - 60 seconds and try " +
+                    "to aim for 3 sets. You have 10 minutes which includes rest time to perform all the sets",
                     "youtube": "6jm4R3K4sJA",
                     "type": "hold",
                     "maxHold": 60 * 10,
@@ -135,7 +136,7 @@ bwf.routine = {
                     "level": 1,
                     "name": "Stomach-to-Wall Handstand",
                     "description": "Start in push-up position with feet against the wall. Move your hands closer to the wall, and climb up the wall with your feet. " +
-                                    "Aim to get your stomach as to the wall and hold for 10 - 60 seconds.",
+                    "Aim to get your stomach as to the wall and hold for 10 - 60 seconds, aim for 3 sets. You have 10 minutes including reset to perform all the sets",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
                     "maxHold": 60 * 10,
@@ -144,6 +145,7 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Freestanding Handstand",
+                    "description": "Perform a freestanding handstand, hold it for 10-60 seconds aim for 3 sets. You have 10 minutes including rest to perform all the sets ",
                     "youtube": "Y3FSeSecjKA",
                     "type": "hold",
                     "maxHold": 60 * 10,
@@ -161,6 +163,8 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Parallel Bar Support",
+                    "description": "Jump up between two parallel bars and hold yourself in the air, making sure you push your shoulders down. Try to hold for 10-60 seconds, aim for 3 sets." +
+                    " You have 3 minutes including rest to perform all the sets ",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
                     "maxHold": 180,
@@ -169,6 +173,8 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Ring Support",
+                    "description": "Jump up between two rings and hold yourself in the air, making sure you push your shoulders down. Try to hold for 10-60 seconds, aim for 3 sets." +
+                    " You have 3 minutes including rest to perform all the sets ",
                     "youtube": "V3IkFK5lvRw",
                     "type": "hold",
                     "maxHold": 180,
@@ -177,6 +183,8 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Rings Turned Out Support Hold",
+                    "description": "Jump up between two rings and hold yourself in the air making sure you push your shoulders down, then turn your palms away from you. Try to hold for 10-60 seconds, aim for 3 sets." +
+                    " You have 3 minutes including rest to perform all the sets ",
                     "youtube": "8gmyhBScTLk",
                     "type": "hold",
                     "maxHold": 180,
@@ -194,7 +202,7 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Negative Pull Ups",
-                    "description": "5-8 reps",
+                    "description": "Get a chair and stand on it, next hold onto the pull up bar and slowly lower yourself down, perform 5-8 reps of this exercise",
                     "youtube": "y5sqSwcRZzo",
                     "type": "reps",
                     "enabled": true
@@ -202,6 +210,7 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Pull Up",
+                    "description": "Perform 5-8 pull ups. Aim to pull down with your shoulders squeezing them together at the bottom of the exercise",
                     "youtube": "RsnbDcsZbpk",
                     "type": "reps",
                     "enabled": true
@@ -209,6 +218,7 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "L-sit Pull Up",
+                    "description": "Perform 5-8 pull ups with your body in a L shape position. Aim to pull down with your shoulders squeezing them together at the bottom of the exercise",
                     "youtube": "quFBLtkxMRM",
                     "type": "reps",
                     "enabled": true
@@ -216,6 +226,8 @@ bwf.routine = {
                 {
                     "level": 3,
                     "name": "Pull Over",
+                    "description": "From a dead hand with straight arms pull your self up and around the bar until you're on top of it. Once on top roll forward and lower the legs performing a negative" +
+                    "pull up to get back into the hang.",
                     "youtube": "saLtuweg8As",
                     "type": "reps",
                     "enabled": true
@@ -238,6 +250,8 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Parallel Bar Dips",
+                    "description": "Jump up between two parallel bars and hold yourself in the air, making sure you push your shoulders down. Lower yourself down until your arms are at 90 degrees and then push " +
+                    "yourself back up. Aim for 3 sets of 5-8 reps",
                     "youtube": "_3RaUMKcGQI",
                     "type": "reps",
                     "enabled": true
@@ -245,6 +259,8 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Ring Dips",
+                    "description": "Jump up between two rings bars and hold yourself in the air, making sure you push your shoulders down. Lower yourself down until your arms are at 90 degrees and then push " +
+                    "yourself back up. Aim for 3 sets of 5-8 reps",
                     "youtube": "cPFmMwC62d8",
                     "type": "reps",
                     "enabled": true
@@ -252,6 +268,8 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Ring Dips in L-Sit",
+                    "description": "Jump up between two rings bars and hold yourself in the air, making sure you push your shoulders down. Lower yourself down with legs in an L shape position" +
+                    " until your arms are at 90 degrees and then push yourself back up. Aim for 3 sets of 5-8 reps",
                     "youtube": "K-fNLVAstcw",
                     "type": "reps",
                     "enabled": true
@@ -304,6 +322,8 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Assisted Bodyweight Squats",
+                    "description": "Stand in front of a horizontal bar, keeping your legs shoulder width apart. Squat down supporting yourself with your hands. Think about sitting backwards not down. " +
+                    "Your knees should not move forwards. Aim for 5-8 reps of 3 sets",
                     "youtube": "OuR_Fp7AB0c",
                     "type": "reps",
                     "enabled": true
@@ -311,6 +331,8 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Bodyweight Squat",
+                    "description": "Keeping your legs shoulder width apart squat down. Think about sitting backwards not down. " +
+                    "Your knees should not move forwards. Aim for 5-8 reps of 3 sets",
                     "youtube": "AkQbbDGMzJk",
                     "type": "reps",
                     "enabled": true
@@ -318,6 +340,8 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Deep Step-up",
+                    "description": "Putting one leg up on a high object, put all your weight on your front leg and step up to the object. Try not to push off with your back foot. To increase difficult find" +
+                    "a higher object to stand on. Aim for 5-8 reps of 3 sets",
                     "youtube": "487aR3A7HvM",
                     "type": "reps",
                     "enabled": true
@@ -338,6 +362,7 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Foot-supported L-sit",
+                    "description": "Sit down on the ground with your legs straight in front of you. Put your hands next to your thighs and push yourself up with straight arms and shoulders down. Hold for 30 seconds",
                     "youtube": "IUZJoSP66HI",
                     "type": "hold",
                     "maxHold": 30,
@@ -346,6 +371,8 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "One-Leg Foot Supported L-sit",
+                    "description": "Sit down on the ground with your legs straight in front of you. Put your hands next to your thighs and push yourself up with straight arms and shoulders down. Raise one leg off the floor" +
+                    "and hold for 30 seconds",
                     "youtube": "IUZJoSP66HI?t=144",
                     "type": "hold",
                     "maxHold": 30,
@@ -354,6 +381,8 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Tuck L-sit",
+                    "description": "Sit down on the ground with your legs tucked up in front of you. Put your hands next to your thighs and push yourself up with straight arms and shoulders down. Keep legs tucked in and off " +
+                    "the floor, hold for 30 seconds",
                     "youtube": "487aR3A7HvM?t=170",
                     "type": "hold",
                     "maxHold": 30,
@@ -362,6 +391,8 @@ bwf.routine = {
                 {
                     "level": 3,
                     "name": "L-sit",
+                    "description": "Sit down on the ground with your legs out in front of you. Put your hands next to your thighs and push yourself up with straight arms and shoulders down. Keep legs straight out and off " +
+                    "the floor, hold for 30 seconds",
                     "youtube": "ek76IXnE9tE",
                     "type": "hold",
                     "maxHold": 30,
@@ -415,6 +446,7 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Wall Pushup",
+                    "description": "Stand about two feet away from a wall. Put your hands on the wall and then perform a push up motion, keep your body as straight as possible. Perform 3 sets of 5-8 reps",
                     "youtube": "a6YHbXD2XlU",
                     "type": "reps",
                     "enabled": true
@@ -422,20 +454,25 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Incline Pushup",
-                    "youtube": "dWbmyYpNONk",
+                    "description": "Stand about two feet away from a raised object. Put your hands on the raised object and then perform a push up motion, keep your body as straight as possible. Perform 3 sets of 5-8 reps",
+                    "youtube": "4dF1DOWzf20",
                     "type": "reps",
                     "enabled": true
                 },
                 {
                     "level": 2,
                     "name": "Pushup",
-                    "youtube": "Eh00_rniF8E",
+                    "description": "Adopt the plank position with legs and arms straight and hands shoulder width apart, lower your body until your chest nears the floor, and then push back up to the starting position." +
+                    " Perform 3 sets of 5-8 reps",
+                    "youtube": "4dF1DOWzf20",
                     "type": "reps",
                     "enabled": true
                 },
                 {
                     "level": 3,
                     "name": "Diamond Pushup",
+                    "description": "Adopt the plank position with legs and arms straight and hands together forming a diamond shape in the gap, lower your body until your chest nears the floor, and then push back up to the starting position." +
+                    " Perform 3 sets of 5-8 reps",
                     "youtube": "s8Ft6xyN5fw",
                     "type": "reps",
                     "enabled": true
@@ -443,6 +480,8 @@ bwf.routine = {
                 {
                     "level": 4,
                     "name": "Rings Wide Pushup",
+                    "description": "Adopt the plank position with legs and arms straight and hands together forming a diamond shape in the gap, lower your body until your chest nears the floor, and then push back up to the starting position." +
+                    " Perform 3 sets of 5-8 reps",
                     "youtube": "jbQyi9xshOU",
                     "type": "reps",
                     "enabled": true
@@ -450,6 +489,7 @@ bwf.routine = {
                 {
                     "level": 5,
                     "name": "Rings Push Ups",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "jbQyi9xshOU",
                     "type": "reps",
                     "enabled": true
@@ -457,6 +497,7 @@ bwf.routine = {
                 {
                     "level": 6,
                     "name": "Rings Turned Out Push Up",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "MrlyEIpe0LI",
                     "type": "reps",
                     "enabled": true
@@ -464,6 +505,7 @@ bwf.routine = {
                 {
                     "level": 7,
                     "name": "Rings Turned Out PPPU",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "-kwe1EOiWMY",
                     "type": "reps",
                     "enabled": true
@@ -484,6 +526,7 @@ bwf.routine = {
                 {
                     "level": 0,
                     "name": "Vertical Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "e5fdh9_kH_Y",
                     "type": "reps",
                     "enabled": true
@@ -491,6 +534,7 @@ bwf.routine = {
                 {
                     "level": 1,
                     "name": "Incline Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "G28qN9FCKE",
                     "type": "reps",
                     "enabled": true
@@ -498,6 +542,7 @@ bwf.routine = {
                 {
                     "level": 2,
                     "name": "Horizontal Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "dvkIaarnf0g",
                     "type": "reps",
                     "enabled": true
@@ -505,6 +550,7 @@ bwf.routine = {
                 {
                     "level": 3,
                     "name": "Wide Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "1yMRvsuk9Xg",
                     "type": "reps",
                     "enabled": true
@@ -512,6 +558,7 @@ bwf.routine = {
                 {
                     "level": 4,
                     "name": "Tuck Front Lever",
+                    "description": "Hold for 10-30 seconds",
                     "youtube": "tiST0765Sfo",
                     "type": "hold",
                     "maxHold": 30,
@@ -520,6 +567,7 @@ bwf.routine = {
                 {
                     "level": 5,
                     "name": "Tuck Ice Cream Maker",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "AszLwoAvLKg",
                     "type": "reps",
                     "enabled": true
@@ -527,6 +575,7 @@ bwf.routine = {
                 {
                     "level": 6,
                     "name": "Tuck Front Level Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "MrlyEIpe0LI",
                     "type": "reps",
                     "enabled": true
@@ -534,6 +583,7 @@ bwf.routine = {
                 {
                     "level": 7,
                     "name": "Advanced Tuck Front Level Row",
+                    "description": "Perform 3 sets of 5-8 reps",
                     "youtube": "cVdb8oUGKAw",
                     "type": "reps",
                     "enabled": true
