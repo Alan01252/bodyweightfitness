@@ -56,6 +56,10 @@ angular.module('starter.controllers', [])
             if ($scope.timerRunning === false) {
                 $scope.$broadcast('timer-reset');
             }
+
+            $("iframe").each(function(index, item) {
+                item.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            });
         };
 
         function setUpVideos(player, youtubeId) {
