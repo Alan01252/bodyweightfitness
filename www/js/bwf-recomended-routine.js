@@ -165,7 +165,7 @@ bwf.routine = {
                     "name": "Parallel Bar Support",
                     "description": "Jump up between two parallel bars and hold yourself in the air, making sure you push your shoulders down. Try to hold for 10-60 seconds, aim for 3 sets." +
                     " You have 3 minutes including rest to perform all the sets ",
-                    "youtube": "dRycbwdcz7Y",
+                    "youtube": "Zv87Teu51tQ",
                     "type": "hold",
                     "maxHold": 180,
                     "enabled": true
