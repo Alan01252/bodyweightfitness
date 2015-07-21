@@ -230,7 +230,7 @@ angular.module('starter.controllers', [])
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
     })
 
-    .controller('SettingsCtrl', function ($scope, $rootScope, settingsFactory, routineFactory) {
+    .controller('SettingsCtrl', function ($scope, $rootScope, $ionicPopup, settingsFactory, routineFactory) {
 
         $rootScope.showCustomBack = false;
         $scope.showCustomBack = false;
@@ -256,6 +256,20 @@ angular.module('starter.controllers', [])
 
             return exercises;
         }
+
+        $scope.clearRoutine = function() {
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'Reset current routine',
+                template: 'Are you sure you want to reset the current routine?'
+            });
+            confirmPopup.then(function(res) {
+                if(res) {
+                    routineFactory.clear();
+                    $scope.exercises = getExercises(routineFactory.get());
+                    $rootScope.$emit('updateRoutine');
+                }
+            });
+        };
 
         $scope.exercises = getExercises(routineFactory.get());
         $scope.settings = settingsFactory.get();

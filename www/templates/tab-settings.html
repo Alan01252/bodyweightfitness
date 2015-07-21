@@ -18,6 +18,11 @@
                 <ion-item ng-repeat="exercise in exercises" href="#/tab/settings/exercise/{{exercise.name}}">
                     {{exercise.name}}
                 </ion-item>
+
+                <h3>Reset routine</h3>
+                <button class="button button-assertive" ng-click="clearRoutine()">
+                    Reset current routine
+                </button>
             </div>
         </div>
     </ion-content>
