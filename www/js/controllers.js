@@ -32,6 +32,7 @@ angular.module('starter.controllers', [])
                 console.log("Allowing screen to sleep again");
                 window.plugins.insomnia.allowSleepAgain();
             }
+            console.log("Resetting timer");
             $scope.$broadcast('timer-reset');
             $scope.timerRunning = false;
             $scope.forceStop = false;
@@ -115,6 +116,10 @@ angular.module('starter.controllers', [])
                 console.log("found current slide moving to " + currentSlide);
                 $ionicSlideBoxDelegate.slide(currentSlide);
             }
+            setTimeout(function () {
+                console.log("resetting timer");
+                $scope.resetTimer();
+            }, 500);
         });
 
 
@@ -200,6 +205,31 @@ angular.module('starter.controllers', [])
             $rootScope.$emit('updateRoutine');
         };
 
+        $scope.updateCategoryMaxHold = function (name, value) {
+
+            $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === name) {
+                    console.log("Updating index " + exerciseIndex + " max hold level " + value);
+                    item.levels[item.activeLevel].maxHold = value;
+                }
+            });
+            routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
+            $rootScope.$emit('updateRoutine');
+        };
+
+        $scope.updateMaxHold = function (name, value) {
+
+            $($scope.routine.exercises).each(function (exerciseIndex, item) {
+                if (item.name === name) {
+                    console.log("Updating index " + exerciseIndex + " max hold " + value);
+                    item.maxHold = value;
+                }
+            });
+
+            routineFactory.add(JSON.parse(JSON.stringify($scope.routine)));
+            $rootScope.$emit('updateRoutine');
+        };
+
         $scope.updateSettings = function (name, value) {
 
             $($scope.routine.exercises).each(function (exerciseIndex, item) {
@@ -241,6 +271,9 @@ angular.module('starter.controllers', [])
 
         console.log($stateParams.exerciseName)
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
+        if ($scope.exercise.type === "category") {
+            $scope.activeLevel = $scope.exercise.levels[$scope.exercise.activeLevel];
+        }
     })
 
     .controller('SettingsCtrl', function ($scope, $rootScope, $ionicPopup, settingsFactory, routineFactory) {

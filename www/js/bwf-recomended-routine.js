@@ -129,7 +129,7 @@ bwf.routine = {
                     "to aim for 3 sets. You have 10 minutes which includes rest time to perform all the sets",
                     "youtube": "6jm4R3K4sJA",
                     "type": "hold",
-                    "maxHold": 60 * 10,
+                    "maxHold": 600,
                     "enabled": true
                 },
                 {
@@ -139,7 +139,7 @@ bwf.routine = {
                     "Aim to get your stomach as to the wall and hold for 10 - 60 seconds, aim for 3 sets. You have 10 minutes including reset to perform all the sets",
                     "youtube": "dRycbwdcz7Y",
                     "type": "hold",
-                    "maxHold": 60 * 10,
+                    "maxHold": 600,
                     "enabled": true
                 },
                 {
@@ -148,7 +148,7 @@ bwf.routine = {
                     "description": "Perform a freestanding handstand, hold it for 10-60 seconds aim for 3 sets. You have 10 minutes including rest to perform all the sets ",
                     "youtube": "Y3FSeSecjKA",
                     "type": "hold",
-                    "maxHold": 60 * 10,
+                    "maxHold": 600,
                     "enabled": true
                 }
             ],

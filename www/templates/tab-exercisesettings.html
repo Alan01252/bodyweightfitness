@@ -15,9 +15,9 @@
         </div>
 
 
-        <div class="row">
-            <div class="col">
-                <div ng-if="exercise.type === 'category' ">
+        <div ng-if="exercise.type === 'category' ">
+            <div class="row">
+                <div class="col">
                     <div class="item item-input item-select">
                         <div class="input-label">
                             Levels
@@ -31,6 +31,30 @@
                                     >{{item.name}}
                             </option>
                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="activeLevel.type === 'hold' ">
+                <div class="row">
+                    <div class="col">
+                        <div class="item item-input">
+                            <span class="input-label">Hold time in seconds</span>
+                            <input type="number" ng-model="activeLevel.maxHold" ng-model-options="{ debounce: 500 }"
+                                   ng-change="updateCategoryMaxHold(exercise.name, activeLevel.maxHold)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="exercise.type === 'hold' ">
+            <div class="row">
+                <div class="col">
+                    <div class="item item-input">
+                        <span class="input-label">Hold time in seconds</span>
+                        <input type="number" ng-model="exercise.maxHold" ng-model-options="{ debounce: 500 }"
+                               ng-change="updateMaxHold(exercise.name, exercise.maxHold)">
                     </div>
                 </div>
             </div>
