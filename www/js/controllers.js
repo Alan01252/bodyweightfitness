@@ -170,6 +170,7 @@ angular.module('starter.controllers', [])
                     exercise = findRepeatExercise(index, routine);
                 } else if (item.type === "category") {
                     exercise = findCategoryExericse(item);
+                    exercise.enabled = item.enabled;
                 }
                 exercise.index = index;
                 if (exercise.enabled) {
@@ -231,6 +232,7 @@ angular.module('starter.controllers', [])
         };
 
         $scope.updateSettings = function (name, value) {
+            console.log ("Updating " + name);
 
             $($scope.routine.exercises).each(function (exerciseIndex, item) {
                 if (item.name === value) {
@@ -271,6 +273,7 @@ angular.module('starter.controllers', [])
 
         console.log($stateParams.exerciseName)
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
+
         if ($scope.exercise.type === "category") {
             $scope.activeLevel = $scope.exercise.levels[$scope.exercise.activeLevel];
         }
