@@ -166,7 +166,10 @@ angular.module('starter.controllers', [])
 
             routine.exercises.forEach(function (item, index) {
                 var exercise = item;
-                if (item.type === "repeat") {
+                if (item.name === "Rest" && populatedRoutine.length > 0 && populatedRoutine[populatedRoutine.length - 1].name === "Rest") {
+                    console.log("Discarding second rest in a row");
+                    return false;
+                } else if (item.type === "repeat") {
                     exercise = findRepeatExercise(index, routine);
                 } else if (item.type === "category") {
                     exercise = findCategoryExercise(item);
