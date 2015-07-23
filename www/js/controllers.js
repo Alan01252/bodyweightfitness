@@ -146,7 +146,7 @@ angular.module('starter.controllers', [])
                 if (item.name === routine.exercises[index].name && item.type !== "repeat") {
                     console.log("Found matching exercise name setting repeat excercise");
                     if (item.type === "category") {
-                        repeatExercise = findCategoryExericse(item);
+                        repeatExercise = findCategoryExercise(item);
                     } else {
                         repeatExercise = item;
                     }
@@ -157,7 +157,7 @@ angular.module('starter.controllers', [])
             return repeatExercise;
         };
 
-        function findCategoryExericse(item) {
+        function findCategoryExercise(item) {
             return item.levels[item.activeLevel];
         }
 
@@ -169,7 +169,7 @@ angular.module('starter.controllers', [])
                 if (item.type === "repeat") {
                     exercise = findRepeatExercise(index, routine);
                 } else if (item.type === "category") {
-                    exercise = findCategoryExericse(item);
+                    exercise = findCategoryExercise(item);
                     exercise.enabled = item.enabled;
                 }
                 exercise.index = index;
