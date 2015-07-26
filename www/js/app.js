@@ -7,13 +7,39 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'timer'])
 
-    .run(function ($ionicPlatform, $ionicHistory, $rootScope) {
+    .run(function ($ionicPlatform, $ionicHistory, $rootScope, $window, settingsFactory) {
 
         $rootScope.goBack = function ($event) {
-                $ionicHistory.goBack();
+            $ionicHistory.goBack();
         };
 
+        function changeOrientation() {
+            if (typeof screen.orientation !== 'undefined') {
+                settingsFactory.get();
+                var orientation = settingsFactory.findSetting('lockOrientation');
+                console.log("Setting orientation" + orientation);
+                if (orientation === "both") {
+                    console.log("allowing both");
+                    if (typeof(screen.unlockOrientation) === "function") {
+                        screen.unlockOrientation();
+                    }
+                } else {
+                    if (typeof(screen.lockOrientation) === "function") {
+                        console.log("locking orientation")
+                        screen.lockOrientation(orientation);
+                    }
+                }
+            }
+        }
+
+        $rootScope.$on('settingsUpdated', function () {
+            changeOrientation();
+            $window.location.reload(true);
+        });
+
         $ionicPlatform.ready(function () {
+
+            changeOrientation();
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -29,6 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
         $ionicConfigProvider.platform.android.scrolling.jsScrolling(false);
+
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.

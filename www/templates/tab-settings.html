@@ -5,11 +5,26 @@
                 <h3>Global settings</h3>
                 <ul class="list">
                     <li class="item item-{{setting.type}}" ng-repeat="setting in settings track by $index">
-                        <label class="{{setting.type}}">
-                            <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
-                                   ng-change="updateSettings(setting.key,setting)">
-                        </label>
-                        {{setting.name}}
+                        <div ng-if="setting.type == 'checkbox'">
+                            <label class="{{setting.type}}">
+                                <input ng-model="setting.value" type="{{setting.type}}" value="setting.value"
+                                       ng-change="updateSettings(setting.key,setting)">
+                            </label>
+                            {{setting.name}}
+                        </div>
+                        <div ng-if="setting.type == 'select'">
+                                <div class="input-label">
+                                    Levels
+                                </div>
+                                <select ng-model="setting.value" type="select"
+                                        ng-change="updateSettings(setting.key, setting)">
+                                    <option ng-repeat="item in setting.allowedValues"
+                                            value="{{item.value}}"
+                                            ng-selected="{{item.value == setting.value}}"
+                                            >{{item.name}}
+                                    </option>
+                                </select>
+                        </div>
                     </li>
                 </ul>
 

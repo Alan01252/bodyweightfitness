@@ -295,6 +295,7 @@ angular.module('starter.controllers', [])
             });
             settingsFactory.clear();
             settingsFactory.add($scope.settings);
+            $rootScope.$emit('settingsUpdated');
         };
 
         function getExercises(routine) {

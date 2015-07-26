@@ -54,8 +54,7 @@ angular.module('starter.services', [])
 
                 var storedRoutine = localStorage.getObject('routine');
                 if (!$.isEmptyObject(storedRoutine)) {
-                    console.log("Stored routine " + storedRoutine);
-                    routine = storedRoutine;
+                    routine = $.extend({}, bwf.routine, storedRoutine);
                     return routine;
                 }
                 return bwf.routine;
@@ -68,8 +67,10 @@ angular.module('starter.services', [])
 
         return {
             findSetting: function (key) {
+                console.log(settings);
                 var value = null;
                 $(settings).each(function (exerciseIndex, item) {
+                    console.log(item);
                     if (item.key === key) {
                         value = item.value;
                         return false;
@@ -93,11 +94,14 @@ angular.module('starter.services', [])
 
                 var storedSettings = localStorage.getObject('settings');
                 if (!$.isEmptyObject(storedSettings)) {
-                    console.log("Stored settings " + storedSettings);
-                    settings = storedSettings;
+                    console.log("Stored settings ");
+                    console.log(storedSettings);
+                    settings = $.extend([], bwf.settings, storedSettings);
+                    console.log(settings);
                     return settings;
                 }
-                return bwf.settings;
+                settings = bwf.settings;
+                return settings;
             }
         };
     }]);
