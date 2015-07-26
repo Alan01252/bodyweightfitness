@@ -13,21 +13,20 @@
                             {{setting.name}}
                         </div>
                         <div ng-if="setting.type == 'select'">
-                                <div class="input-label">
-                                    Levels
-                                </div>
-                                <select ng-model="setting.value" type="select"
-                                        ng-change="updateSettings(setting.key, setting)">
-                                    <option ng-repeat="item in setting.allowedValues"
-                                            value="{{item.value}}"
-                                            ng-selected="{{item.value == setting.value}}"
-                                            >{{item.name}}
-                                    </option>
-                                </select>
+                            <div class="input-label">
+                                Levels
+                            </div>
+                            <select ng-model="setting.value" type="select"
+                                    ng-change="updateSettings(setting.key, setting)">
+                                <option ng-repeat="item in setting.allowedValues"
+                                        value="{{item.value}}"
+                                        ng-selected="{{item.value == setting.value}}"
+                                        >{{item.name}}
+                                </option>
+                            </select>
                         </div>
                     </li>
                 </ul>
-
 
                 <h3>Exercise settings</h3>
                 <ion-item ng-repeat="exercise in exercises" href="#/tab/settings/exercise/{{exercise.name}}">

@@ -1,10 +1,11 @@
 var bwf = bwf || {};
-bwf.settings = [{
-    "name": "Enable sounds",
-    "key": "enableSounds",
-    "value": true,
-    "type": "checkbox"
-},
+bwf.settings = [
+    {
+        "name": "Enable sounds",
+        "key": "enableSounds",
+        "value": true,
+        "type": "checkbox"
+    },
     {
         "name": "Allowed orientation",
         "key": "lockOrientation",
@@ -17,3 +18,4 @@ bwf.settings = [{
         "type": "select"
     }
 ];
+

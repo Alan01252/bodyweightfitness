@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
         $scope.startTimer = function (index) {
             console.log('timer-' + index);
             if (window.plugins) {
-                console.log("Making sure screen kept alive");
+                console.log("Making sure screen is kept alive");
                 window.plugins.insomnia.keepAwake();
             }
             document.getElementById('timer-' + index).getElementsByTagName('timer')[0].start();
@@ -46,7 +46,7 @@ angular.module('starter.controllers', [])
             }
 
             console.log("Timer stopped");
-            console.log("Force stop event" + $scope.forceStop);
+            console.log("Force stop event " + $scope.forceStop);
             if (!$scope.forceStop && settingsFactory.findSetting("enableSounds")) {
 
                 console.log("Trying to play finishing sound");
@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
         });
 
         $scope.slideChanged = function (index) {
-            console.log("slide changed");
+            console.log("Slide changed");
             currentSlideFactory.set(index);
             console.log($rootScope.currentSlide);
             if ($scope.timerRunning === false) {
@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
                     player.appendChild(p);
                 }
             }
-        };
+        }
 
 
         $scope.$on("$ionicView.afterEnter", function (scopes, states) {
@@ -111,13 +111,13 @@ angular.module('starter.controllers', [])
             $scope.routine = populateRepeats(routineFactory.get());
             console.log("Getting current slide");
             var currentSlide = currentSlideFactory.get();
-            console.log("Current slide was" + currentSlide);
+            console.log("Current slide was " + currentSlide);
             if (currentSlide !== null) {
-                console.log("found current slide moving to " + currentSlide);
+                console.log("Found current slide moving to " + currentSlide);
                 $ionicSlideBoxDelegate.slide(currentSlide);
             }
             setTimeout(function () {
-                console.log("resetting timer");
+                console.log("Resetting timer");
                 $scope.resetTimer();
             }, 500);
         });
@@ -144,18 +144,18 @@ angular.module('starter.controllers', [])
             var repeatExercise = {};
             $(routine.exercises).each(function (exerciseIndex, item) {
                 if (item.name === routine.exercises[index].name && item.type !== "repeat") {
-                    console.log("Found matching exercise name setting repeat excercise");
+                    console.log("Found matching exercise name setting repeat exercise");
                     if (item.type === "category") {
                         repeatExercise = findCategoryExercise(item);
                     } else {
                         repeatExercise = item;
                     }
-                    console.log("using " + repeatExercise.name);
+                    console.log("Using " + repeatExercise.name);
                     return false;
                 }
             });
             return repeatExercise;
-        };
+        }
 
         function findCategoryExercise(item) {
             return item.levels[item.activeLevel];
@@ -169,7 +169,8 @@ angular.module('starter.controllers', [])
                 if (item.name === "Rest" && populatedRoutine.length > 0 && populatedRoutine[populatedRoutine.length - 1].name === "Rest") {
                     console.log("Discarding second rest in a row");
                     return false;
-                } else if (item.type === "repeat") {
+                }
+                if (item.type === "repeat") {
                     exercise = findRepeatExercise(index, routine);
                 } else if (item.type === "category") {
                     exercise = findCategoryExercise(item);
@@ -235,7 +236,7 @@ angular.module('starter.controllers', [])
         };
 
         $scope.updateSettings = function (name, value) {
-            console.log ("Updating " + name);
+            console.log("Updating " + name);
 
             $($scope.routine.exercises).each(function (exerciseIndex, item) {
                 if (item.name === value) {
@@ -274,7 +275,7 @@ angular.module('starter.controllers', [])
             return foundExercise;
         }
 
-        console.log($stateParams.exerciseName)
+        console.log($stateParams.exerciseName);
         $scope.exercise = findExerciseByName($stateParams.exerciseName);
 
         if ($scope.exercise.type === "category") {

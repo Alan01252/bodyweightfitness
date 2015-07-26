@@ -17,7 +17,7 @@ angular.module('starter.services', [])
             getObject: function (key) {
                 return JSON.parse($window.localStorage[key] || '{}');
             }
-        }
+        };
     }])
 
     .factory('currentSlideFactory', [function () {
@@ -29,7 +29,7 @@ angular.module('starter.services', [])
             get: function () {
                 return currentSlide;
             }
-        }
+        };
     }])
 
     .factory('routineFactory', ['$localStorage', function (localStorage) {
@@ -59,7 +59,7 @@ angular.module('starter.services', [])
                 }
                 return bwf.routine;
             }
-        }
+        };
     }])
 
     .factory('settingsFactory', ['$localStorage', function (localStorage) {
