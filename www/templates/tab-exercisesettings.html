@@ -6,7 +6,7 @@
                     <li class="item item-checkbox">
                         <label class="checkbox">
                             <input ng-model="exercise.enabled" type="checkbox" value="exercise.enabled"
-                                   ng-change="updateSettings(exercise.name,exercise)">
+                                   ng-change="updateSettings(exercise.name,exercise)" />
                         </label>
                         Enabled
                     </li>
@@ -41,7 +41,7 @@
                         <div class="item item-input">
                             <span class="input-label">Hold time in seconds</span>
                             <input type="number" ng-model="activeLevel.maxHold" ng-model-options="{ debounce: 500 }"
-                                   ng-change="updateCategoryMaxHold(exercise.name, activeLevel.maxHold)">
+                                   ng-change="updateCategoryMaxHold(exercise.name, activeLevel.maxHold)" />
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="item item-input">
                         <span class="input-label">Hold time in seconds</span>
                         <input type="number" ng-model="exercise.maxHold" ng-model-options="{ debounce: 500 }"
-                               ng-change="updateMaxHold(exercise.name, exercise.maxHold)">
+                               ng-change="updateMaxHold(exercise.name, exercise.maxHold)" />
                     </div>
                 </div>
             </div>
